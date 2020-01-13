@@ -10,13 +10,13 @@ class Pipeline extends React.Component {
         pipelines: [],
         key: 0
       };
-    };
+    }
 
     componentDidMount(){
     }
     
     addPipeline = () => {
-      console.log("KEY:",this.state.key);
+      console.log("KEY: ",this.state.key);
       this.setState({ key: this.state.key + 1 });
       this.setState(state => {
       const pipelines = state.pipelines.concat(<Column clickDelete={this.ClickDelete} delete={this.deletePipeline} array={this.state.pipelines} key={this.state.key} id={this.state.key}/>);
@@ -41,10 +41,10 @@ class Pipeline extends React.Component {
   render() {
     console.log("pipelines: ", this.state.pipelines);
     return (
-        <form className="form-pipelines"> 
-             {this.state.pipelines}
-            <button type="button" className="btn btn-light pipeline col-lg-2 col-md-3 col-11" onClick={this.addPipeline}>Add one pipeline</button>        
-        </form>
+      <form className="form-pipelines"> 
+            {this.state.pipelines}
+          <button type="button" className="btn btn-light pipeline col-lg-2 col-md-3 col-5" onClick={this.addPipeline}>Add one pipeline</button>        
+      </form>
     )
   }
 }

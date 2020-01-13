@@ -22,8 +22,8 @@ class Board extends React.Component {
     return (
         <div className="board"  style={{ backgroundColor:`${this.state.color}` }}>
             <div className="inputs-board row" style={{ backgroundColor:`${this.state.color}` }}>
-                <input type="text" className="form-control board-input col-12  col-md-4 col-lg-3 " placeholder="My board" value={this.state.board_name} onChange={(event) => {this.setState({board_name: event.target.value});}}/>
-                <input type="text" className="form-control board-input2 col-12  col-md-4 ofsset-md-1 col-lg-4 offset-1"  placeholder="Change the color" onChange={(event) => {this.setState({color: event.target.value});}}/>
+                <input type="text" className="form-control board-input col-10  col-md-3 col-lg-3 " placeholder="My board" value={this.state.board_name} onChange={(event) => {this.setState({board_name: event.target.value});}}/>
+                <input type="text" className="form-control board-input2 col-10  col-md-4 ofsset-md-1 col-lg-4 offset-1"  placeholder="Change the color" onChange={(event) => {this.setState({color: event.target.value});}}/>
             </div>
             <div className="pipeline-board">
               <Pipeline x={this.state.board_name}/>
