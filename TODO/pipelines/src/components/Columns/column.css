@@ -45,7 +45,7 @@
 
 .add-cards{
     height: 5vh;
-    width: 50vw;
+    width: 80%;
     margin-top: 10px;
     margin: auto;
     padding: inherit;
@@ -61,7 +61,7 @@
     height: 10%;
     width: 10%;
     display: inline-block;
-    order-top-right-radius: 10%;
+    border-top-right-radius: 10%;
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;
@@ -70,7 +70,7 @@
 
 .inside-column{
     height: 60vh;
-    width: 100%;
+    width: 30vw;
 	position: relative;
 	text-align: center;
     margin-top: 3vh;
@@ -102,3 +102,54 @@
   .inside-column::selection{
       background: transparent;
   }
+  
+  .modal-input{
+    height: 5vh;
+    width: 20vw;
+    color: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4vh;
+    border: transparent;
+    display: inline-block;
+    float: left;
+    border: none;
+    border-bottom: black;
+    border-bottom: solid;
+  }
+
+  .modal-input2{
+    height: 5vh;
+    width: 30vw;
+    color: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4vh;
+    border: transparent;
+    display: inline-block;
+    float: left;
+    border: none;
+    border-bottom: black;
+    border-bottom: solid;
+  }
+
+  .modal-input:focus{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom-color: rgba(0, 0, 0, 0.021);
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
+  }
+  
+  .modal-input2:focus{
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-bottom-color: rgba(0, 0, 0, 0.021);
+      border-right-color: transparent;
+      border-left-color: transparent;
+      border-top-color: transparent;
+    }
+
+    .error{
+        font-size: 20px;
+        color: red;
+    }

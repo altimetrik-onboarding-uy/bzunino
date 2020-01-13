@@ -14,30 +14,36 @@ class Pipeline extends React.Component {
 
     componentDidMount(){
     }
-
     
     addPipeline = () => {
-      setTimeout(() => {
-        console.log("KEY:",this.state.key);
+      console.log("KEY:",this.state.key);
       this.setState({ key: this.state.key + 1 });
       this.setState(state => {
-        const pipelines = state.pipelines.concat(<Column array={this.state.pipelines} key={this.state.key} id={this.state.key}/>);
-
+      const pipelines = state.pipelines.concat(<Column clickDelete={this.ClickDelete} delete={this.deletePipeline} array={this.state.pipelines} key={this.state.key} id={this.state.key}/>);
         return {
           pipelines
         };
-      });
-      }, 2000);
-        // create an array that will show the quantity of components. 
+      },() => {  });
     };
+
+    ClickDelete = (key) =>{
+      this.deletePipeline(key);
+      console.log(key);
+    }
+
+    deletePipeline = (x) =>{
+      const newlist = [].concat(this.state.pipelines); // Clone array with concat or slice(0)
+      newlist.splice(x,1);
+      this.setState({ pipelines: newlist });
+    }
 
 
   render() {
-    console.log("columns in pip:", this.state.pipelines);
+    console.log("pipelines: ", this.state.pipelines);
     return (
         <form className="form-pipelines"> 
              {this.state.pipelines}
-            <button type="button" className="btn btn-light pipeline col-lg-2 col-md-3 col-11" onClick={this.addPipeline} >Add one pipeline</button>        
+            <button type="button" className="btn btn-light pipeline col-lg-2 col-md-3 col-11" onClick={this.addPipeline}>Add one pipeline</button>        
         </form>
     )
   }
