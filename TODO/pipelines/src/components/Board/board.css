@@ -16,9 +16,9 @@
 }
 
 .board-input{
-    height: 10vh;
+    height: 8vh;
     width: 40vw;
-    background-color: rgb(241, 241, 241);
+    background-color: transparent;
     color: rgb(0, 0, 0);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
@@ -30,12 +30,13 @@
     border-bottom: black;
     border-bottom: solid;
     position: fixed;
+    border-radius: none;
 }
 
 .board-input2{
-    height: 10vh;
+    height: 8vh;
     width: 40vw;
-    background-color: rgb(241, 241, 241);
+    background-color: transparent;
     color: rgb(0, 0, 0);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
@@ -59,6 +60,7 @@
   -webkit-box-shadow: none;
   box-shadow: none;
   border-bottom-color: rgba(0, 0, 0, 0.021);
+  background-color: rgb(241, 241, 240);
   border-right-color: transparent;
   border-left-color: transparent;
   border-top-color: transparent;
@@ -68,6 +70,7 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     border-bottom-color: rgba(0, 0, 0, 0.021);
+    background-color: rgb(241, 241, 240);
     border-right-color: transparent;
     border-left-color: transparent;
     border-top-color: transparent;

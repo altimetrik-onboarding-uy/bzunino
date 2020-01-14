@@ -1,7 +1,7 @@
 .column{
     max-height: 70vh;
     width: 20vw;
-    background-color: rgb(129, 73, 9);
+    background-color: rgb(207, 199, 190);
     margin-top: 2%;
     display: inline-block;
     float: left;
@@ -11,7 +11,7 @@
 }
 
 .column-input{
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(190, 184, 177);
     width: 70%;
     border: black 0.5px ;
     border-radius: 0%;
@@ -29,7 +29,7 @@
   border-right-color: transparent;
   border-left-color: transparent;
   border-top-color: transparent;
-  background-color: rgb(190, 119, 38);
+  background-color: rgb(238, 236, 235);
 }
 
 .colum-button{
@@ -58,7 +58,7 @@
 }
 
 .delete-pipeline{
-    height: 10%;
+    height: 9%;
     width: 10%;
     display: inline-block;
     border-top-right-radius: 10%;
