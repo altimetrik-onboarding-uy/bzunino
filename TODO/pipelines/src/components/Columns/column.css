@@ -1,7 +1,7 @@
 .column{
     max-height: 70vh;
     width: 20vw;
-    background-color: rgb(207, 199, 190);
+    background-color: rgb(231, 231, 226);
     margin-top: 2%;
     display: inline-block;
     float: left;
@@ -11,7 +11,7 @@
 }
 
 .column-input{
-    background-color: rgb(190, 184, 177);
+    background-color: rgb(241, 241, 240);
     width: 70%;
     border: black 0.5px ;
     border-radius: 0%;
@@ -49,6 +49,13 @@
     margin-top: 10px;
     margin: auto;
     padding: inherit;
+    background-color: rgb(185, 185, 185);;
+    border: none;
+}
+
+.add-cards:focus{
+  outline: 0;
+  border: none;
 }
 
 .card-div{
@@ -71,8 +78,8 @@
 .inside-column{
     height: 60vh;
     width: 30vw;
-	position: relative;
-	text-align: center;
+    position: relative;
+    text-align: center;
     margin-top: 3vh;
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;
