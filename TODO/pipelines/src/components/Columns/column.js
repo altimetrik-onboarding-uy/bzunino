@@ -52,9 +52,9 @@ class Column extends React.Component {
     console.log("Columns in column: ", this.props.array);
     return (
       <div className="column row">
-          <input type="text" className="form-control column-input col-lg-10 col-md-10 col-10"  onBlur={this.onBlur} placeholder="My tasks" value={this.state.column_name} onChange={(event) => {this.setState({column_name: event.target.value});}}/>
-          <button type="button" className="btn btn-light delete-pipeline col-lg-2 col-md-2 col-2" onClick={(event) => { this.props.delete(); this.props.clickDelete(this.props.id);}} >X</button>
-          <div className="inside-column">
+          <input type="text" className="form-control column-input col-lg-10 col-md-10 col-8"  onBlur={this.onBlur} placeholder="My tasks" value={this.state.column_name} onChange={(event) => {this.setState({column_name: event.target.value});}}/>
+          <button type="button" className="btn btn-light delete-pipeline col-lg-2 col-md-2 col-3" onClick={(event) => { this.props.delete(); this.props.clickDelete(this.props.id);}} >X</button>
+          <div className="inside-column col-lg-12 col-md-12 col-12">
               {this.state.cards}
               { this.state.show ? 
           <>
@@ -81,7 +81,7 @@ class Column extends React.Component {
             </Modal>
           </>
             : null }
-          <Button className="add-cards" variant="primary" onClick={this.handleShow}>
+          <Button className="add-cards col-lg-8 col-md-10 col-10" variant="primary" onClick={this.handleShow}>
                 Add card
           </Button>
         </div>

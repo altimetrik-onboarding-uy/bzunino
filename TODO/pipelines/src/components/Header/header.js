@@ -17,7 +17,7 @@ class Header extends React.Component {
 
   render() {
     return (
-    <nav className="navbar">
+    <nav className="navbar row">
       <img src={require('../../assets/trello.png')} className="logo" alt="logo"/>
       <h1 className="header_title" >Pipelines</h1>
     </nav>

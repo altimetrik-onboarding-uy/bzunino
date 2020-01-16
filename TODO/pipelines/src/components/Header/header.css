@@ -1,24 +1,22 @@
 .navbar{
     width: 100vw;
     height: 13vh;
-    background-color: white;
-    border-radius: 3px;
-    border-bottom:5px solid grey;
+    background-color: transparent;
     align-content: space-between;
     position: fixed;
+    padding-bottom: none;
 }
 
 .header_title{
-    font-size: 35px;
+    font-size: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: black;
+    color: white;
     margin-top: 5px;
     margin-right: auto;
 }
 
 .logo{
     height: 10vh;
-    margin-bottom: 5px;
     margin-left: auto;
     padding-right: 1%;
 }

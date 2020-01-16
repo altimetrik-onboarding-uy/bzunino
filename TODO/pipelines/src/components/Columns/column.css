@@ -1,7 +1,7 @@
 .column{
     max-height: 70vh;
     width: 20vw;
-    background-color: rgb(129, 73, 9);
+    background-color: rgb(231, 231, 226);
     margin-top: 2%;
     display: inline-block;
     float: left;
@@ -11,7 +11,7 @@
 }
 
 .column-input{
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(241, 241, 240);
     width: 70%;
     border: black 0.5px ;
     border-radius: 0%;
@@ -29,7 +29,7 @@
   border-right-color: transparent;
   border-left-color: transparent;
   border-top-color: transparent;
-  background-color: rgb(190, 119, 38);
+  background-color: rgb(238, 236, 235);
 }
 
 .colum-button{
@@ -49,6 +49,13 @@
     margin-top: 10px;
     margin: auto;
     padding: inherit;
+    background-color: rgb(185, 185, 185);;
+    border: none;
+}
+
+.add-cards:focus{
+  outline: 0;
+  border: none;
 }
 
 .card-div{
@@ -58,7 +65,7 @@
 }
 
 .delete-pipeline{
-    height: 10%;
+    height: 9%;
     width: 10%;
     display: inline-block;
     border-top-right-radius: 10%;
@@ -71,8 +78,8 @@
 .inside-column{
     height: 60vh;
     width: 30vw;
-	position: relative;
-	text-align: center;
+    position: relative;
+    text-align: center;
     margin-top: 3vh;
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;

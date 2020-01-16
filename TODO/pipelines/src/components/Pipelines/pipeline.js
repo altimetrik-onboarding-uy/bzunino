@@ -1,50 +1,99 @@
 import React from 'react';
 import Styles from './pipeline.css';
 import Column from '../Columns/column';
+import Modal from 'react-bootstrap/Modal';
+import ModalDialog from 'react-bootstrap/ModalDialog';
+import ModalTitle from 'react-bootstrap/ModalTitle';
+import Button from 'react-bootstrap/Button';
+import Card from '../Cards/cards';
+
 
 class Pipeline extends React.Component {
   constructor(props){
     super(props);
     
       this.state={
-        pipelines: [],
+        cards: [],
+        name: "",
+        show: false,
+        task: "",
+        decription: "",
+        error: false,
+        id: this.props.id,
         key: 0
       };
     }
 
     componentDidMount(){
     }
-    
-    addPipeline = () => {
-      console.log("KEY: ",this.state.key);
-      this.setState({ key: this.state.key + 1 });
-      this.setState(state => {
-      const pipelines = state.pipelines.concat(<Column clickDelete={this.ClickDelete} delete={this.deletePipeline} array={this.state.pipelines} key={this.state.key} id={this.state.key}/>);
-        return {
-          pipelines
+
+    addCard = () => {
+      if (this.state.task && this.state.decription !== ""){
+        this.setState({ key: this.state.key +1 });
+        this.setState(state => {
+        const cards = state.cards.concat(<Card  changeData={this.changeData} cards={this.state.cards} task={this.state.task} description={this.state.decription} column={this.props.id} key={this.state.key} id={this.state.key}/>);
+        this.handleClose();
+        this.setState({ task: "" });
+        this.setState({ description: "" });
+          return {
+            cards
         };
-      },() => {  });
+      });
+      }else{
+        this.setState({ error: true });
+      }
     };
 
-    ClickDelete = (key) =>{
-      this.deletePipeline(key);
-      console.log(key);
+    changeData = (x, y, z) =>{
+      for (let i = 0; i<this.state.cards.length; i++){
+        if(this.state.cards[i].props.id === x){
+          return this.handleClose; 
+        }
+      }
+      return console.log("ok");
     }
 
-    deletePipeline = (x) =>{
-      const newlist = [].concat(this.state.pipelines); // Clone array with concat or slice(0)
-      newlist.splice(x,1);
-      this.setState({ pipelines: newlist });
-    }
-
+    handleClose = () => this.setState({ show: false});
+    handleShow = () => this.setState({ show: true});
+  
 
   render() {
-    console.log("pipelines: ", this.state.pipelines);
     return (
-      <form className="form-pipelines"> 
-            {this.state.pipelines}
-          <button type="button" className="btn btn-light pipeline col-lg-2 col-md-3 col-5" onClick={this.addPipeline}>Add one pipeline</button>        
-      </form>
+        <div className="column row col-lg-3 col-md-6 col-8" key={this.props.id} id={this.props.id}>
+          <input type="text" className="form-control column-input col-lg-10 col-md-10 col-8"  onBlur={this.onBlur} placeholder="My tasks" value={this.state.name} onChange={(event) => {this.setState({name: event.target.value});}}/>
+          <button type="button" className="btn btn-light delete-pipeline col-lg-2 col-md-2 col-3" onClick={(event) =>  this.props.delete(this.props.id)} >X</button>
+          <div className="inside-column col-lg-12 col-md-12 col-12">
+              {this.state.cards}
+              { this.state.show ? 
+          <>
+            <Modal className="modal" show={this.state.show} onHide={this.handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>
+                  <h2>Task: </h2>
+                  <input type="text" className="modal-input" onChange={(event) => {this.setState({task: event.target.value});}}/>
+                  </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <h3>Description: </h3>
+                <input type="text" className="modal-input2" onChange={(event) => {this.setState({decription: event.target.value});}}/>
+              </Modal.Body>
+              <Modal.Footer>
+              { this.state.error ? <h1 className="error" >One of the field is incomplete</h1> : null }
+                <Button variant="secondary" onClick={this.handleClose}>
+                  Close
+                </Button>
+                <Button variant="primary" onClick={this.addCard}>
+                  Save Changes
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </>
+          : null }
+          <Button className="add-cards col-lg-8 col-md-10 col-10" variant="primary" onClick={this.handleShow}>
+            Add card
+          </Button>
+        </div>
+      </div>
     )
   }
 }

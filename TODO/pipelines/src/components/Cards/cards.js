@@ -25,14 +25,13 @@ class Card extends React.Component {
       this.setState({ reShow: true });
     }
 
-    changeData = () =>{
-      if (this.state.Dec && this.state.Task !== ""){
-        return console.log("llegue hasta la funcion");
-      }else{
-        return this.setState({ error:  true });
+    reCloseModal = () =>{
+      if (this.state.reTask && this.state.reDec !== ""){
+        return this.setState({ reShow: false });
+      } else{
+        return this.setState({ error: true });
       }
     }
-    reCloseModal = () =>{ this.setState({ reShow: false });}
 
   render() {
     console.log("Key de card in column: ", this.props.column);
@@ -40,7 +39,7 @@ class Card extends React.Component {
     console.log("reDec: ", this.state.reDec);
     console.log("error: ", this.props.error);
     return (
-      <div className="into-card">
+      <div className="into-card" key={this.props.id}>
         { this.state.reShow ? 
         <>
           <Modal className="modal" show={this.state.reShow} onHide={this.reCloseModal}>
@@ -55,10 +54,11 @@ class Card extends React.Component {
               <input type="text" className="modal-input2"  value={this.state.reDec} onChange={(event) => {this.setState({reDec: event.target.value});}}/>
             </Modal.Body>
             <Modal.Footer>
+            { this.state.error ? <h1 className="error" >One of the field is incomplete</h1> : null }
               <Button variant="secondary" onClick={this.reCloseModal}>
                 Close
               </Button>
-              <Button variant="primary" onClick={this.changeData}>
+              <Button variant="primary" onClick={ () => {this.props.changeData(this.props.id, this.state.reTask, this.state.reDec); this.reCloseModal(); }}>
                 Save Changes
               </Button>
             </Modal.Footer>
@@ -68,10 +68,10 @@ class Card extends React.Component {
         null }
           <Button type="button" className="button-card"  variant="primary" onClick={this.reShowModal}>
             <div className="header-card">
-              {this.props.task}
+              {this.state.reTask}
             </div>
             <div className="body-card">
-              {this.props.description}
+              {this.state.reDec}
             </div>
           </Button>
       </div>
