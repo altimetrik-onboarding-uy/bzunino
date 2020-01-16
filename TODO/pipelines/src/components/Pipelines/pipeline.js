@@ -19,7 +19,8 @@ class Pipeline extends React.Component {
         task: "",
         decription: "",
         error: false,
-        id: this.props.id
+        id: this.props.id,
+        key: 0
       };
     }
 
@@ -30,7 +31,7 @@ class Pipeline extends React.Component {
       if (this.state.task && this.state.decription !== ""){
         this.setState({ key: this.state.key +1 });
         this.setState(state => {
-        const cards = state.cards.concat(<Card cards={this.state.cards} task={this.state.task} description={this.state.decription} column={this.props.id} key={this.state.key} id={this.state.key}/>);
+        const cards = state.cards.concat(<Card  changeData={this.changeData} cards={this.state.cards} task={this.state.task} description={this.state.decription} column={this.props.id} key={this.state.key} id={this.state.key}/>);
         this.handleClose();
         this.setState({ task: "" });
         this.setState({ description: "" });
@@ -40,9 +41,17 @@ class Pipeline extends React.Component {
       });
       }else{
         this.setState({ error: true });
-        console.log("Vacio: ",this.state.error);
       }
     };
+
+    changeData = (x, y, z) =>{
+      for (let i = 0; i<this.state.cards.length; i++){
+        if(this.state.cards[i].props.id === x){
+          return this.handleClose; 
+        }
+      }
+      return console.log("ok");
+    }
 
     handleClose = () => this.setState({ show: false});
     handleShow = () => this.setState({ show: true});
@@ -50,7 +59,7 @@ class Pipeline extends React.Component {
 
   render() {
     return (
-        <div className="column row" key={this.props.id} id={this.props.id}>
+        <div className="column row col-lg-3 col-md-6 col-8" key={this.props.id} id={this.props.id}>
           <input type="text" className="form-control column-input col-lg-10 col-md-10 col-8"  onBlur={this.onBlur} placeholder="My tasks" value={this.state.name} onChange={(event) => {this.setState({name: event.target.value});}}/>
           <button type="button" className="btn btn-light delete-pipeline col-lg-2 col-md-2 col-3" onClick={(event) =>  this.props.delete(this.props.id)} >X</button>
           <div className="inside-column col-lg-12 col-md-12 col-12">
@@ -79,12 +88,12 @@ class Pipeline extends React.Component {
               </Modal.Footer>
             </Modal>
           </>
-            : null }
-            <Button className="add-cards col-lg-8 col-md-10 col-10" variant="primary" onClick={this.handleShow}>
-                  Add card
-            </Button>
-          </div>
+          : null }
+          <Button className="add-cards col-lg-8 col-md-10 col-10" variant="primary" onClick={this.handleShow}>
+            Add card
+          </Button>
         </div>
+      </div>
     )
   }
 }
