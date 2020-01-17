@@ -10,13 +10,9 @@
 	outline: inherit;
 }
 
-.card-header{
-    width: 100%;
-}
-
 .into-card{
 	height: 30%;
-    width: 90%;
+    width: 100%;
     margin: auto;
 	background-color: white;
 	border-radius: 5%;
@@ -24,23 +20,13 @@
 	border: none;
 }
 
-.header-card{
-	font-size: 30px;
-    font-family: monospace;
-	border-bottom-color: black 1px solid;
-	height: 40%;
-	white-space: nowrap; 
-	width: 100%; 
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
 .body-card{
-	font-size: 15px;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	height: 60%;
-	white-space: nowrap;
-	word-break: break-all;
+	font-size: 40px;
+	font-family: monospace;
+	text-align: center;
+	vertical-align: auto;
+	height: 100%;
+	white-space: nowrap; 
 	width: 100%; 
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -50,6 +36,21 @@
 	height: 100%;
 	width: 100%;
 	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.button-card:focus{
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.button-card:hover{
+	background-color: rgb(201, 201, 201);
+}
+
+.button-card:active{
+	background-color: RED;
 }
 
 ::placeholder{

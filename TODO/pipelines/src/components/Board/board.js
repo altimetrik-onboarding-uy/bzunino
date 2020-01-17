@@ -109,11 +109,6 @@ class Board extends React.Component {
     }
 
     setColor9 = () =>{
-      this.setState({ color: "white"});
-      this.setState({ imagen: ""});
-    }
-
-    setColor10 = () =>{
       this.setState({ color: "orange"});
       this.setState({ imagen: ""});
     }
@@ -172,8 +167,7 @@ class Board extends React.Component {
                   <button type="button" className="btn btn-primary setColor" style={{ backgroundColor: "grey" }} onClick={this.setColor6}></button>
                   <button type="button" className="btn btn-primary setColor" style={{ backgroundColor: "purple" }} onClick={this.setColor7}></button>
                   <button type="button" className="btn btn-primary setColor" style={{ backgroundColor: "black" }} onClick={this.setColor8}></button>
-                  <button type="button" className="btn btn-primary setColor" style={{ backgroundColor: "white" }} onClick={this.setColor9}></button>
-                  <button type="button" className="btn btn-primary setColor" style={{ backgroundColor: "orange" }} onClick={this.setColor10}></button>
+                  <button type="button" className="btn btn-primary setColor" style={{ backgroundColor: "orange" }} onClick={this.setColor9}></button>
                 </Modal.Body>
                 <Modal.Footer>
                   <Button variant="secondary" onClick={this.handleClose2}>

@@ -96,6 +96,12 @@
 .add-cards:focus{
   outline: 0;
   border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.add-cards:hover{
+  background-color: rgb(170, 170, 170);;
 }
 
 .card-div{
@@ -149,54 +155,8 @@
   .inside-column::selection{
       background: transparent;
   }
-  
-  .modal-input{
-    height: 5vh;
-    width: 20vw;
-    color: rgb(0, 0, 0);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 4vh;
-    border: transparent;
-    display: inline-block;
-    float: left;
-    border: none;
-    border-bottom: black;
-    border-bottom: solid;
-  }
 
-  .modal-input2{
-    height: 5vh;
-    width: 30vw;
-    color: rgb(0, 0, 0);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 4vh;
-    border: transparent;
-    display: inline-block;
-    float: left;
-    border: none;
-    border-bottom: black;
-    border-bottom: solid;
+  .error{
+      font-size: 20px;
+      color: red;
   }
-
-  .modal-input:focus{
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-bottom-color: rgba(0, 0, 0, 0.021);
-    border-right-color: transparent;
-    border-left-color: transparent;
-    border-top-color: transparent;
-  }
-  
-  .modal-input2:focus{
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      border-bottom-color: rgba(0, 0, 0, 0.021);
-      border-right-color: transparent;
-      border-left-color: transparent;
-      border-top-color: transparent;
-    }
-
-    .error{
-        font-size: 20px;
-        color: red;
-    }
