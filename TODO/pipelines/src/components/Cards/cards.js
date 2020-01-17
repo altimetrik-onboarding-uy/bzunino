@@ -43,7 +43,7 @@ class Card extends React.Component {
               <Modal.Title>
                 <h2>Task: </h2>
                 <input type="text" className="modal-input" value={this.state.reTask} onChange={(event) => {this.setState({reTask: event.target.value});}}/>
-                </Modal.Title>
+              </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <h3>Description: </h3>
@@ -51,8 +51,8 @@ class Card extends React.Component {
             </Modal.Body>
             <Modal.Footer>
             { this.state.error ? <h1 className="error" >One of the field is incomplete</h1> : null }
-              <Button variant="secondary" onClick={this.reCloseModal}>
-                Close
+              <Button variant="secondary" onClick={ () => this.props.delete(this.props.id)}>
+                Eliminar
               </Button>
               <Button variant="primary" onClick={ () => {this.props.changeData(this.props.id, this.state.reTask, this.state.reDec); this.reCloseModal(); }}>
                 Save Changes

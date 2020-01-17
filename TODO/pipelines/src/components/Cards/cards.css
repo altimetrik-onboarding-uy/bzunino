@@ -20,7 +20,8 @@
     margin: auto;
 	background-color: white;
 	border-radius: 5%;
-    margin-bottom: 1vh;
+	margin-bottom: 1vh;
+	border: none;
 }
 
 .header-card{

@@ -31,7 +31,7 @@ class Pipeline extends React.Component {
       if (this.state.task && this.state.decription !== ""){
         this.setState({ key: this.state.key +1 });
         this.setState(state => {
-        const cards = state.cards.concat(<Card  changeData={this.changeData} cards={this.state.cards} task={this.state.task} description={this.state.decription} column={this.props.id} key={this.state.key} id={this.state.key}/>);
+        const cards = state.cards.concat(<Card  delete={this.deleteCard} changeData={this.changeData} cards={this.state.cards} task={this.state.task} description={this.state.decription} column={this.props.id} key={this.state.key} id={this.state.key}/>);
         this.handleClose();
         this.setState({ task: "" });
         this.setState({ description: "" });
@@ -52,6 +52,16 @@ class Pipeline extends React.Component {
       }
     }
 
+    deleteCard = (x) =>{
+      for (let i = 0; i<this.state.cards.length; i++){
+        if(this.state.cards[i].props.id === x){
+          const newlist = [].concat(this.state.cards);
+          newlist.splice(i, 1);
+          this.setState({ cards: newlist });
+        }
+      }
+    }
+
     handleClose = () => this.setState({ show: false});
     handleShow = () => this.setState({ show: true});
   
@@ -68,12 +78,12 @@ class Pipeline extends React.Component {
             <Modal className="modal" show={this.state.show} onHide={this.handleClose}>
               <Modal.Header closeButton>
                 <Modal.Title>
-                  <h2>Task: </h2>
+                  <h2>Task:</h2>
                   <input type="text" className="modal-input" onChange={(event) => {this.setState({task: event.target.value});}}/>
                   </Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <h3>Description: </h3>
+                <h3>Description:</h3>
                 <input type="text" className="modal-input2" onChange={(event) => {this.setState({decription: event.target.value});}}/>
               </Modal.Body>
               <Modal.Footer>
