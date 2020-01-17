@@ -38,7 +38,6 @@ class Column extends React.Component {
       });
       }else{
         this.setState({ error: true });
-        console.log("Vacio: ",this.state.error);
       }
     };
 
@@ -48,8 +47,6 @@ class Column extends React.Component {
     handleShow = () => this.setState({ show: true});
 
   render() {
-    console.log("key de colum: ", this.props.id);
-    console.log("Columns in column: ", this.props.array);
     return (
       <div className="column row">
           <input type="text" className="form-control column-input col-lg-10 col-md-10 col-8"  onBlur={this.onBlur} placeholder="My tasks" value={this.state.column_name} onChange={(event) => {this.setState({column_name: event.target.value});}}/>

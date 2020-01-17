@@ -34,10 +34,6 @@ class Card extends React.Component {
     }
 
   render() {
-    console.log("Key de card in column: ", this.props.column);
-    console.log("reTasK: ", this.state.reTask);
-    console.log("reDec: ", this.state.reDec);
-    console.log("error: ", this.props.error);
     return (
       <div className="into-card" key={this.props.id}>
         { this.state.reShow ? 

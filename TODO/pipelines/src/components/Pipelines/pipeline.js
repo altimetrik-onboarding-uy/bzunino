@@ -50,7 +50,6 @@ class Pipeline extends React.Component {
           return this.handleClose; 
         }
       }
-      return console.log("ok");
     }
 
     handleClose = () => this.setState({ show: false});
