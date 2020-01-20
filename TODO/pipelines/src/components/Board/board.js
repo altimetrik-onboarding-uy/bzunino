@@ -2,8 +2,6 @@ import React from 'react';
 import Styles from './board.css';
 import Pipeline from '../Pipelines/pipeline';
 import Modal from 'react-bootstrap/Modal';
-import ModalDialog from 'react-bootstrap/ModalDialog';
-import ModalTitle from 'react-bootstrap/ModalTitle';
 import Button from 'react-bootstrap/Button';
 import Header from '../Header/header';
 
@@ -121,7 +119,7 @@ class Board extends React.Component {
                 <input type="text" className="form-control board-input col-7 col-md-5 col-lg-5 " placeholder="My board" value={this.state.board_name} onChange={(event) => {this.setState({board_name: event.target.value});}}/>
                 <div className="dropdown show">
                   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
+                    Settings
                   </button>
                   <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <Button className="dropdown-item" onClick={this.handleShow}>Choose one background</Button>

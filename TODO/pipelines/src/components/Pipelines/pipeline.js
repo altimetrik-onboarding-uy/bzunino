@@ -1,9 +1,6 @@
 import React from 'react';
 import Styles from './pipeline.css';
-import Column from '../Columns/column';
 import Modal from 'react-bootstrap/Modal';
-import ModalDialog from 'react-bootstrap/ModalDialog';
-import ModalTitle from 'react-bootstrap/ModalTitle';
 import Button from 'react-bootstrap/Button';
 import Card from '../Cards/cards';
 
@@ -30,30 +27,25 @@ class Pipeline extends React.Component {
     }
 
     addCard = () => {
-      if (this.state.task && this.state.decription !== ""){
+      if (this.state.task !== ""){
         this.setState({ key: this.state.key +1 });
         this.setState(state => {
         const cards = state.cards.concat(<Card descBackUp={this.state.descbackup} taskbackUp={this.state.taskBackup} delete={this.deleteCard} changeData={this.changeData} cards={this.state.cards} task={this.state.task} description={this.state.description} column={this.props.id} key={this.state.key} id={this.state.key}/>);
-        this.handleClose();
-        this.setState({ task: "" });
-        this.setState({ description: "" });
           return {
             cards
         };
+      }, () => {
+        this.handleClose();
+        this.setState({ taskBackup: this.state.task });
+        this.setState({ descbackup: this.state.description });
+        this.setState({ task: "" });
+        this.setState({ description: "" });
       });
+ 
       }else{
         this.setState({ error: true });
       }
     };
-
-    changeData = (x, y, z) =>{
-      for (let i = 0; i<this.state.cards.length; i++){
-        if(this.state.cards[i].props.id === x){
-          return this.handleClose; 
-        }
-        this.setState({ taskBackup: y });
-      }
-    }
 
     deleteCard = (x) =>{
       for (let i = 0; i<this.state.cards.length; i++){
@@ -74,6 +66,7 @@ class Pipeline extends React.Component {
     console.log("task back: ", this.state.taskBackup);
     console.log("desc: ", this.state.description);
     console.log("descBak: ", this.state.descbackup);
+    console.log("Card ", this.state.cards);
 
     return (
       <div className="column row col-lg-3 col-md-6 col-8" key={this.props.id} id={this.props.id}>
@@ -95,7 +88,7 @@ class Pipeline extends React.Component {
                   <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(event) => {this.setState({description: event.target.value}); this.setState({ descbackup: event.target.value})}}></textarea>
                 </Modal.Body>
                 <Modal.Footer>
-                { this.state.error ? <h1 className="error" >One of the field is incomplete</h1> : null }
+                { this.state.error ? <h1 className="error" >Task field incomplete</h1> : null }
                   <Button variant="secondary" onClick={this.handleClose}>
                     Close
                   </Button>

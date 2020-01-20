@@ -38,6 +38,7 @@
 	background-color: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
+	line-height: 100px;
 }
 
 .button-card:focus{
@@ -55,4 +56,30 @@
 
 ::placeholder{
 	color: grey;
+}
+
+.closeButton{
+	display: inline-block;
+	float: right;
+	background-color: transparent;
+	text-align: center;
+	border: none;
+	font-size: 20px;
+	width: 10%;
+}
+
+.closeButton:hover{
+	background-color: rgb(235, 235, 235);
+}
+
+.closeButton:focus{
+	background-color: rgb(250, 250, 250);
+}
+
+.modal-header{
+	border: none;
+}
+
+.modal-footer{
+	border: none;
 }
