@@ -63,7 +63,6 @@ class Card extends React.Component {
     }
 
   render() {
-    console.log("retask: ", this.state.reTask);
     return (
       <div className="into-card" key={this.props.id}>
         { this.state.reShow ? 

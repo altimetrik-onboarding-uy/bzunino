@@ -62,12 +62,6 @@ class Pipeline extends React.Component {
   
 
   render() {
-    console.log("task: ", this.state.task);
-    console.log("task back: ", this.state.taskBackup);
-    console.log("desc: ", this.state.description);
-    console.log("descBak: ", this.state.descbackup);
-    console.log("Card ", this.state.cards);
-
     return (
       <div className="column row col-lg-3 col-md-6 col-8" key={this.props.id} id={this.props.id}>
         <input type="text" className="form-control column-input col-lg-10 col-md-10 col-8"  onBlur={this.onBlur} placeholder="My tasks" value={this.state.name} onChange={(event) => {this.setState({name: event.target.value});}}/>
