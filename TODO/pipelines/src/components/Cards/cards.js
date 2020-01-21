@@ -15,10 +15,23 @@ class Card extends React.Component {
         backTask: this.props.taskbackUp,
         backDec: this.props.descBackUp,
         error: false,
-        BackUp: false
+        BackUp: false,
+        isOpen: false,
       };
+      this.escFunction = this.escFunction.bind(this);
     };
 
+    escFunction(event){
+      if(event.keyCode === 27) {
+        this.BackUp();
+      }
+    }
+    componentDidMount(){
+      document.addEventListener("keydown", this.escFunction, false);
+    }
+    componentWillUnmount(){
+      document.removeEventListener("keydown", this.escFunction, false);
+    }
 
     BackUp = () =>{
       this.setState({ BackUp: true });
