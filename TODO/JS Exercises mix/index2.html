@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function AddNewItem() {
+                let number = 4;
+                let y = document.getElementById("itemSelect");
+                let option = document.createElement("option");
+                option.text = number;
+                console.log(number);
+                y.add(option);
+                return ++number;
+            }
+        </script>
+    <meta charset=utf-8/>
+    <title>Add new items to a dropdown list</title>
+    </head>
+    <body>
+        <form>
+            <select id="itemSelect">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            <input type="button" onclick="AddNewItem()" value="Select and Remove">
+        </form>
+    </body>
+</html>

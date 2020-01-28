@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Clock() {
+                let currentTime = new Date();
+                let currentHours = currentTime.getHours();
+                let currentMinutes = currentTime.getMinutes();
+                let currentSeconds = currentTime.getSeconds();
+
+                currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+                currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+                let timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+                currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+                currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+
+                let currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+
+                document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+            }
+        </script>
+    <meta charset=utf-8 />
+    <style type="text/css">
+        body{
+            margin: 30px;
+        }
+    </style>   
+        <title>Count the items of a dropdown list</title>
+    </head>
+    <body onload="Clock(); setInterval('Clock()', 20000 )">
+        <span id="clock">
+            &nbsp;
+        </span>
+    </body>
+</html>
