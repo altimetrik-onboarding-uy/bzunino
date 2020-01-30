@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let result = document.createElement('div');
+        result.className = 'result';
+        let target = document.getElementById('some target'); 
+        result.appendChild(target.cloneNode(true)); 
+        target.parentNode.replaceChild(result, target);
+    </script>
+    <div>
+        <div id="some target">      
+            <div class="first not target">something   
+            </div> 
+            <div>this is your <strong>target <span>for real<span></strong></div>         
+            <span id="nope">blah<span>    
+      </div>
+    </div>
+</body>
+</html>
