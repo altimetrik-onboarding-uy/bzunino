@@ -1,6 +1,4 @@
-let array = [1, 2, 3, 4, 5];
-
-function third_greatest_number(){
+function third_greatest_number(array){
     let array2 = array;
 
     let max = Math.max.apply(null, array2);
