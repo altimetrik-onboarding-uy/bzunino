@@ -3,13 +3,12 @@
     <head>
         <script>
             function AddNewItem() {
-                let number = 4;
-                let y = document.getElementById("itemSelect");
+                let y = document.getElementById("itemSelect").length;
+                let x = document.getElementById("itemSelect");
                 let option = document.createElement("option");
-                option.text = number;
-                console.log(number);
-                y.add(option);
-                return ++number;
+                let counter = y + 1;
+                option.text = counter;
+                x.add(option);
             }
         </script>
     <meta charset=utf-8/>
